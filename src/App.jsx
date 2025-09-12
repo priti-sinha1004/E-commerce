@@ -1,5 +1,7 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
+
+// Pages
 import Home from './pages/Home';
 import Collection from './pages/Collection';
 import About from './pages/About';
@@ -9,15 +11,19 @@ import Login from './pages/Login';
 import PlaceOrder from './pages/PlaceOrder';
 import Orders from './pages/Orders';
 import Cart from './pages/Cart';
+
+// Components
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import SearchBar from './components/SearchBar';
+import SearchBar from './components/SearchBar'; // not used in this file, but imported
 
 const App = () => {
   return (
-    <div className='px-4 sm:px-[5vw] md:px-[7vw] lg:[9vw] min-h-screen flex flex-col'>
+    <div className='px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw] min-h-screen flex flex-col'>
+      {/* Navigation Bar */}
       <Navbar />
-      <SearchBar/>
+
+      {/* Main Page Content */}
       <div className='flex-grow'>
         <Routes>
           <Route path='/' element={<Home />} />
@@ -31,6 +37,8 @@ const App = () => {
           <Route path='/orders' element={<Orders />} />
         </Routes>
       </div>
+
+      {/* Footer */}
       <Footer />
     </div>
   );
